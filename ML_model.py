@@ -30,9 +30,8 @@ def train_col12():
 
 
 def train_col11():
-  con = sqlite3.connect("Trystress.db")
-  # Lägger till nullif för att senare byta ut tomma strängar mot
-  # nullvärden som senare byts ut m.h.a. SimpleImputer 
+  con = sqlite3.connect("StressDatabase.db")
+  
   dataset = pd.read_sql_query("SELECT * FROM stress", con)
   X = dataset.iloc[:, [0,1,2,4,5,7,8,9]].values  # change columns here to find out effect. 
   y = dataset.iloc[:, 10].values    # put the dependent varible here.
