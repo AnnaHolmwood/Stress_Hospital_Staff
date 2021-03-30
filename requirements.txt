@@ -1,1 +1,3 @@
 # Create a file using pip freeze that will list all pip installs necessary for the project
+
+# pip install sanic "databases[sqlite]" numpy scikit-learn pandas
