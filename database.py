@@ -19,8 +19,9 @@ async def get(query, values = {}):
 async def get_patient_care():
   return await get('SELECT Stressaffectingpatient_care FROM stress WHERE stressduringwork = 2')
 
-async def get_todo_by_id(id):
-  return await get('SELECT * FROM todos WHERE id = :id', { "id": id })
+# sample function
+# async def get_todo_by_id(id):
+#  return await get('SELECT * FROM todos WHERE id = :id', { "id": id })
 
 async def get_alcohol_stressed():
   return await get('SELECT Alcohol_usage FROM stress WHERE  stressduringwork = 2')

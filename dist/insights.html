@@ -17,6 +17,9 @@
     <!--custom css file-->
     <link rel="stylesheet" href="./css/styles.css">
 
+    <!--chart.js script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+
 </head>
 <body>
     
@@ -56,14 +59,16 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-6 col-md-12 site-title">
-                  <h3 class="title-text">Hey I'm the insights area</h3>
+                  <h3 class="title-text">Stress in hospitals</h3>
                   <div class="paragraph py-4 w-75 parainsights">
                     <p class="parainsights">
-                      Here we will write some of our insights about this project.
+                      How stressed are your employees? Do you know what impact it is having on them, on your patients and on your hospital’s budget?
 
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-                      rerum iure obcaecati vel possimus officia maiores perferendis
-                      ut! Quos, perspiciatis.
+                      We surveyed one hundred thousand hospital staff to ask them how they experience stress at work.
+                        
+                      Stressed staff consume more alcohol. Let the facts speak for themselves.
+                        
+                      <canvas id="doughnut"></canvas>
                     </p>
                     <p class="parainsights">
                       And here we will write even more about or project.
