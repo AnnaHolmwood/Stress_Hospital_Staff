@@ -19,12 +19,6 @@
 
 /*************** END GIVE ALL PAGES A BACKGROUND IMAGE ***************/
 
-.predictionInfo {
-  font-size: 18px;
-  color: #e15a00;
-  margin-top: 1.5rem;
-}
-
 /*************** START STYLING OF HOME PAGE ***************/
 
 /* Styling of the word "Hey" at the very first page */
@@ -107,21 +101,21 @@
 .getcv,
 .predict-btn {
   background: var(--gradient-color);
-  background-clip: padding-box;
-  color: whitesmoke;
-  transition: background 0.6s ease;
+  /* background-clip: padding-box; */
+  color: #f5f5f5;
+  transition: all 0.8s ease-out;
   box-shadow: var(--box-shadow);
 }
 
 .hireme:hover,
 .getcv:hover,
 .predict-btn:hover {
-  background: whitesmoke;
-  background-clip: padding-box;
-  color: black;
+  background: #f5f5f5;
+  /* background-clip: padding-box; */
+  color: #111111;
 }
 
-.hireme::after,
+/* .hireme::after,
 .getcv::after,
 .predict-btn::after {
   position: absolute;
@@ -133,7 +127,7 @@
   content: "";
   z-index: -1;
   border-radius: 4px;
-}
+} */
 
 /*************** START STYLING OF NAVIGATION BARS, THEY ARE SEPARETED ***************/
 
@@ -378,11 +372,26 @@
   padding-top: 30px;
 }
 
-/*  
-.predict-btn{
-
+.predictionInfo {
+  height: 15rem;
+  padding: 30px 130px;
+  font-size: 2rem;
+  animation: zoomInRight;
+  animation-duration: 3s;
 }
 
+.special_tag {
+  height: 15rem;
+  /* padding: 0 130px; */
+  font-size: 2rem;
+  animation: zoomInRight;
+  animation-duration: 3s;
+}
+
+.predict-btn {
+  margin: 30px 12px;
+}
+/*
 .radio-buttons-section{
   
 }

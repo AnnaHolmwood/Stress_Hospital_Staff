@@ -53,7 +53,7 @@ def predict_col11(age, gender, Specialization, workHours, patientPerDay, overtim
   y_pred = classifier11.predict(sc.transform([[age, gender, sector, Specialization, workHours, patientPerDay, overtimeWorkInterest, overtimeWorkPaid]]))
   #print('from inside ML_model col11: ', y_pred)
   y_pred = int(y_pred)
-  return { "col11-predict": y_pred }
+  return { "col11_predict": y_pred }
 
 train_col11()
 train_col12()

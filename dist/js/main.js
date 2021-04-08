@@ -57,18 +57,29 @@ $(".predict-btn").on("click", async function () {
   })
 
   let prediction = await res.json()
-  if (prediction.status === "error")
-    return $(".predictionInfo").html(`
-      <p>${prediction.massage}</p>
+  if (prediction.status === "error") {
+    $(".text")
+      .html(
+        `
+      ${prediction.massage}
+    `
+      )
+      .fadeIn("slow")
+    setTimeout(function () {
+      $(".text").fadeOut("slow")
+    }, 5000)
+  }
+
+  if (prediction.massage.col11_predict === 1)
+    $(".predictionInfo").html(`
+      <p style="color: #6351CE" class="special_tag">The worker is sometimes stressed 😒</p>
     `)
-
-  $(".predictionInfo").html(`
-    <p>${prediction.massage}</p>
-  `)
-
-  // vissa chart
-  // console.log(prediction)
-  // $("#prediction").html(`
-  //   Will user click this ad: <em>${prediction["will-click"]}</em>
-  // `)
+  else if (prediction.massage.col11_predict === 2)
+    $(".predictionInfo").html(`
+      <p style="color: #FF595E" class="special_tag">The worker is very often stressed 🤦‍♂️🤦‍♀️</p> 
+    `)
+  else if (prediction.massage.col11_predict === 3)
+    $(".predictionInfo").html(`
+        <p style="color: #00A35C" class="special_tag">The worker is never stressed 😁👍</p> 
+      `)
 })
