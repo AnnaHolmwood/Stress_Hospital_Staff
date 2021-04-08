@@ -61,6 +61,7 @@
 .img-fluid.robot-first-page {
   animation: fadeInRight;
   animation-duration: 3s;
+  padding-top: 30px;
 }
 
 /* Styling of the TITLE paragraph at the bottom right of the first page */
@@ -276,7 +277,7 @@
 }
 
 .robot-about-page {
-  padding-top: 25px;
+  padding-top: 90px;
   animation: fadeInBottomRight;
   animation-duration: 2s;
 }
@@ -375,3 +376,4 @@
 }
 
 /*************** END STYLING OF PREDICT PAGE ***************/
+
