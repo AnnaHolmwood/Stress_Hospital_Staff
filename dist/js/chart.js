@@ -101,6 +101,9 @@ async function pass_data1_to_doughnut() {
     let alcohol_data1 = await res.json()
     console.log(alcohol_data1) // returns an array with needed data
     doughnut.data.datasets.data1 = alcohol_data1
+    doughnut.data.labels.push(label)
+    alcohol_data1.data.push(data)
+    alcohol_data1.backgroundColor.push(color)
     doughnut.update()
 }
 
@@ -109,6 +112,9 @@ async function pass_data2_to_doughnut() {
     let alcohol_data2 = await res.json()
     console.log(alcohol_data2) // returns an array with needed data
     doughnut.data.datasets.data2 = alcohol_data2
+    doughnut.data.labels.push(label)
+    alcohol_data2.data.push(data)
+    alcohol_data2.backgroundColor.push(color)
     doughnut.update()
 }
 
@@ -117,5 +123,8 @@ async function pass_data_to_bar() {
     let specialization_data = await res.json()
     console.log(specialization_data) // returns an array with needed data
     bar.data.datasets.data = specialization_data
+    bar.data.labels.push(label)
+    specialization_data.data.push(data)
+    specialization_data.backgroundColor.push(color)
     bar.update()
 }

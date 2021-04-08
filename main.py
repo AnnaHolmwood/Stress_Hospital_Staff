@@ -1,19 +1,12 @@
 from sanic import Sanic, response
-
 from sanic.exceptions import NotFound
-
 from ML_model import predict_col11, predict_col12, train_col11, train_col12
-
-
+from database import get_alcohol_stressed, get_alcohol_not_stressed, get_specialization
 
 app = Sanic(__name__)
 
-
-
 train_col12()
-
 train_col11()
-
 
 
 @app.post('/api/predict')
@@ -40,6 +33,20 @@ async def predict_work(req):
 
     return response.json(prediction)
 
+@app.get('/rest/insights')
+async def get_alcohol_stressed(req):
+  alcohol_stressed = await get_alcohol_stressed()
+  return res.json(alcohol_stressed)
+
+@app.get('/rest/insights')
+async def get_alcohol_not_stressed(req):
+  alcohol_not_stressed = await get_alcohol_not_stressed()
+  return res.json(alcohol_not_stressed)
+
+@app.get('/rest/insights')
+async def get_specialization(req):
+  specialization = await get_specialization()
+  return res.json(specialization)
 
 
 app.static('/', './dist')
