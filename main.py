@@ -10,39 +10,28 @@ train_col11()
 
 
 @app.post('/api/predict')
-
 async def predict_stress(req):
-
-    values = req.json
-
-    prediction = predict_col11(values['age'], values['gender'], values['Specialization'], values['workHours'], values['patientPerDay'], values['overtimeWorkInterest'], values['overtimeWorkPaid'], values['sector'])
-    print('prediction2 says:', prediction)
-
-    return response.json(prediction)
+  values = req.json
+  prediction = predict_col11(values['age'], values['gender'], values['Specialization'], values['workHours'], values['patientPerDay'], values['overtimeWorkInterest'], values['overtimeWorkPaid'], values['sector'])
+  print('prediction2 says:', prediction)
+  return response.json(prediction)
 
  
-
 async def predict_work(req):
-
-    values = req.json
-    
-    prediction = predict_col12(values['age'], values['gender'], values['Specialization'], values['workHours'], values['patientPerDay'], values['overtimeWorkInterest'], values['overtimeWorkPaid'], values['sector'])
-   
-    print('prediction1 says:', prediction)
-
-    return response.json(prediction)
+  values = req.json 
+  prediction = predict_col12(values['age'], values['gender'], values['Specialization'], values['workHours'], values['patientPerDay'], values['overtimeWorkInterest'], values['overtimeWorkPaid'], values['sector'])
+  print('prediction1 says:', prediction)
+  return response.json(prediction)
 
 @app.get('/api/insights')
 async def get_alcohol_stressed(req):
   alcohol_stressed = await get_alcohol_stressed()
   return response.json(alcohol_stressed)
 
-@app.get('/api/insights')
 async def get_alcohol_not_stressed(req):
   alcohol_not_stressed = await get_alcohol_not_stressed()
   return response.json(alcohol_not_stressed)
 
-@app.get('/api/insights')
 async def get_specialization(req):
   specialization = await get_specialization()
   return response.json(specialization)
