@@ -88,7 +88,7 @@
 /* Also PREDICT button at predict page */
 .hireme,
 .getcv,
-.predict {
+.predict-btn {
   padding: 0.8rem 2.2rem;
   font: normal 500 16px/20px var(--roboto);
   position: relative;
@@ -100,7 +100,7 @@
 
 .hireme,
 .getcv,
-.predict {
+.predict-btn {
   background: var(--gradient-color);
   background-clip: padding-box;
   color: whitesmoke;
@@ -110,7 +110,7 @@
 
 .hireme:hover,
 .getcv:hover,
-.predict:hover {
+.predict-btn:hover {
   background: whitesmoke;
   background-clip: padding-box;
   color: black;
@@ -118,7 +118,7 @@
 
 .hireme::after,
 .getcv::after,
-.predict::after {
+.predict-btn::after {
   position: absolute;
   top: -2px;
   left: 2px;
@@ -325,6 +325,7 @@
 
 .predict-text{
   padding-top: 25px;
+  padding-bottom: 15px;
   font-size: 25px;
   font-weight: 300;
   animation: fadeInRight;
@@ -339,10 +340,10 @@
 
 /* Styling of the radio buttons */
 .radiobuttons {
-  font-size: 25px;
+  font-size: 18px;
   margin: 0px 0px 0px 12px;
-  animation: fadeInRight;
-  animation-duration: 2s;
+  animation: flipInY;
+  animation-duration: 4s;
   padding-bottom: 10px;
 }
 
@@ -353,6 +354,8 @@
   padding: 10px 0 10px 12px;
   animation: fadeInLeft;
   animation-duration: 2s;
+  color: #6351ce;
+
 }
 
 /* Styling of the robot picture in the predict page */
@@ -371,9 +374,14 @@
   padding-top: 30px;
 }
 
-.predict-button{
-  position: absolute;
+/*  
+.predict-btn{
+
 }
 
+.radio-buttons-section{
+  
+}
+*/
 /*************** END STYLING OF PREDICT PAGE ***************/
 
