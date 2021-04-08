@@ -44,10 +44,9 @@ app.static('/', './dist')
 #404 exception
 
 @app.exception(NotFound)
-
 async def ignore_404s(req, err):
 
-  return await response.file('../dist/index.html')
+  return await response.file('./dist/index.html')
 
 
 
