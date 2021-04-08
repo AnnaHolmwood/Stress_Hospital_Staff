@@ -16,6 +16,12 @@
       crossorigin="anonymous"
     />
 
+    <!-- Animate css link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <!-- font awesome Icons -->
     <link rel="stylesheet" href="./css/all.min.css" />
 
@@ -25,9 +31,12 @@
   <body>
     <!--custom canvas-->
 
+
+
+
     <!-- ==================== Start Header Area ==================== -->
 
-    <header class="header_area">
+    <header class="header_area_predict">
       <div class="main-menu">
         <nav class="navbar navbar-expand-lg navbar-light">
           <a class="navbar-brand" href="#"
@@ -71,8 +80,21 @@
     <section class="predict-area">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 col-md-12 site-title">
-            <h3>Hey I'm the predict area</h3>
+          <div class="col-lg-6 col-md-12 site-title">
+            <h3 class="predict-title text-uppercase">predict</h3>
+            <p class="predict-text">
+              Do you want to know if staff members are susceptible to stress? Or
+              indeed if they are at risk of feeling considerable job
+              dissatisfaction?
+            </p>
+            <p class="predict-text">
+              Answer Dr De Stress’ questions about your staff and let him tell
+              you if you need to act. Reduce staff sick days and turnover costs
+              by making the people you have feel better at work.
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-12 predict-image">
+            <img src="./img/pepper.jpg" alt="predict-image" class="img-fluid robot-predict-page">
           </div>
         </div>
       </div>
@@ -150,17 +172,31 @@
             <label class="form-check-label" for="inlineRadio3">Value 3</label>
           </div>
         </div>
+        <div>
+          <button type="button" class="button mr-4 text-uppercase predict">predict</button>
       </div>
     </section>
 
+    <!-- Import of chart.js and canvas -->
     <section>
-      <div class="container">
+      <div
+        class="chart-container"
+        style="padding-left: 400px; padding-bottom: 400px; height: 1400px; width: 1400px"
+      >
         <div class="row">
-          <canvas id="chart" width="30px" height="30px"></canvas>
+          <canvas id="chart"></canvas>
           <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
           <script src="./js/main.js"></script>
+          <p class="para-predict-results">
+            As we can see the employee is 56% likely to get stressed! 
+          </p>
         </div>
       </div>
+
+      <div>
+        
+      </div>
+
     </section>
 
     <!-- ==================== End predict Area ==================== -->
