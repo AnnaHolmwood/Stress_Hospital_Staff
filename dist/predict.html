@@ -112,6 +112,7 @@
               name="age"
               id="thirty"
               value="1"
+              required
             />
             <label class="form-check-label" for="inlineRadio1">30-40</label>
           </div>
@@ -151,6 +152,7 @@
           name="gender"
           id="male"
           value="1"
+          required
         />
         <label class="form-check-label" for="inlineRadio1">Male</label>
       </div>
@@ -178,6 +180,7 @@
               name="specialization"
               id="counselor"
               value="1"
+              required
             />
             <label class="form-check-label" for="inlineRadio1">Counselor</label>
           </div>
@@ -313,6 +316,7 @@
               name="workHour"
               id="five"
               value="1"
+              required
             />
             <label class="form-check-label" for="inlineRadio1">5 hours</label>
           </div>
@@ -351,6 +355,7 @@
               name="patientsPerDay"
               id="lessTen"
               value="1"
+              required
             />
             <label class="form-check-label" for="inlineRadio1">Below 10</label>
           </div>
@@ -389,6 +394,7 @@
               name="overtimeWorkInterest"
               id="otInterestYes"
               value="1"
+              required
             />
             <label class="form-check-label" for="inlineRadio1">Yes</label>
           </div>
@@ -417,6 +423,7 @@
               name="overtimeWorkPaid"
               id="otPaidYes"
               value="1"
+              required
             />
             <label class="form-check-label" for="inlineRadio1">Yes</label>
           </div>
@@ -445,6 +452,7 @@
               name="sector"
               id="public"
               value="1"
+              required
             />
             <label class="form-check-label" for="inlineRadio1">Public</label>
           </div>
@@ -460,21 +468,15 @@
           </div>
         </div>
         <div>
-          <button type="button" class="button mr-4 text-uppercase predict-btn">predict</button>
+          <button type="button" class="button mr-4 text-uppercase predict-btn">Predict</button>
       </div>
       </div>
     </section>
-
-
     <section>
       <div class="container">
+        <div class="predictionInfo"></div>
         <div class="row">
           <canvas id="chart" width="30px" height="30px"></canvas>
-          <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-          <script src="./js/main.js"></script>
-          <p class="para-predict-results">
-            As we can see the employee is 56% likely to get stressed! 
-          </p>
         </div>
       </div>
 
@@ -567,5 +569,8 @@
   />
 
 <!-- ==================== End Footer Area ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
