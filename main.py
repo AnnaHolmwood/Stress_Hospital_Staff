@@ -32,20 +32,20 @@ async def predict_work(req):
 
     return response.json(prediction)
 
-@app.get('/rest/insights')
+@app.get('/api/insights')
 async def get_alcohol_stressed(req):
   alcohol_stressed = await get_alcohol_stressed()
-  return res.json(alcohol_stressed)
+  return response.json(alcohol_stressed)
 
-@app.get('/rest/insights')
+@app.get('/api/insights')
 async def get_alcohol_not_stressed(req):
   alcohol_not_stressed = await get_alcohol_not_stressed()
-  return res.json(alcohol_not_stressed)
+  return response.json(alcohol_not_stressed)
 
-@app.get('/rest/insights')
+@app.get('/api/insights')
 async def get_specialization(req):
   specialization = await get_specialization()
-  return res.json(specialization)
+  return response.json(specialization)
 
 
 app.static('/', './dist')

@@ -18,10 +18,10 @@ async def get(query, values = {}):
 # database functions
 
 async def get_alcohol_stressed():
-  return await get('SELECT Alcohol_usage FROM stress WHERE  stressduringwork = 2')
+  return await get('SELECT alcoholUsage FROM stress WHERE  stressDuringWork = 2')
 
 async def get_alcohol_not_stressed():
-  return await get('SELECT Alcohol_usage FROM stress WHERE  stressduringwork = 3')
+  return await get('SELECT alcoholUsage FROM stress WHERE  stressDuringWork = 3')
 
 async def get_specialization():
-  return await get('SELECT Specialization FROM stress WHERE feelingonjob = 3')
+  return await get('SELECT Specialization FROM stress WHERE feelingonJob = 3')
