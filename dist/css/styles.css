@@ -1,7 +1,6 @@
 /* Import foints from fonts.css file */
 @import url(./partials/_variables.css);
 @import url(./fonts.css);
-@import url(./partials/global.css);
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 
 /*************** START GIVE ALL PAGES A BACKGROUND IMAGE ***************/
@@ -19,6 +18,12 @@
 }
 
 /*************** END GIVE ALL PAGES A BACKGROUND IMAGE ***************/
+
+.predictionInfo {
+  font-size: 18px;
+  color: #e15a00;
+  margin-top: 1.5rem;
+}
 
 /*************** START STYLING OF HOME PAGE ***************/
 
@@ -323,7 +328,7 @@
   animation-duration: 2s;
 }
 
-.predict-text{
+.predict-text {
   padding-top: 25px;
   padding-bottom: 15px;
   font-size: 25px;
@@ -333,7 +338,7 @@
 }
 
 /* Style on the chart.js component */
-.chart-container{
+.chart-container {
   animation: fadeInRight;
   animation-duration: 3s;
 }
@@ -355,11 +360,10 @@
   animation: fadeInLeft;
   animation-duration: 2s;
   color: #6351ce;
-
 }
 
 /* Styling of the robot picture in the predict page */
-.predict-image{
+.predict-image {
   padding-top: 90px;
   padding-right: 100px;
   animation: fadeInRight;
@@ -367,7 +371,7 @@
 }
 
 /* Styling of the paragraph under the chart.js component */
-.para-predict-results{
+.para-predict-results {
   font-size: 25px;
   font-weight: 500;
   padding-left: 185px;
@@ -384,4 +388,3 @@
 }
 */
 /*************** END STYLING OF PREDICT PAGE ***************/
-
