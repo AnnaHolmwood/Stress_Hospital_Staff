@@ -11,7 +11,7 @@ train_col11()
 @app.post('/api/predict')
 async def predict_stress(req):
   values = req.json
-  if len(values) == None or len(values) < 8 or len(values) == "":
+  if len(values) < 8:
     return response.json({"status": "error", "massage": "All fields must be answered! "}, status=400)
   print("request values: ", values)
   prediction = predict_col11(values['age'], values['gender'], values['Specialization'], values['workHours'], values['patientPerDay'], values['overtimeWorkInterest'], values['overtimeWorkPaid'], values['sector'])

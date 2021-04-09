@@ -1,5 +1,5 @@
 // Pass canvas id for Chart to work.
-let chart = new Chart('chart1', {
+let chart = new Chart('chart', {
   type: 'bar',
   data: {
     labels: ["Sometimes", "Very Often", "Never"],
