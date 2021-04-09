@@ -12,7 +12,7 @@ train_col11()
 async def predict_stress(req):
   values = req.json
   if len(values) == None or len(values) < 8 or len(values) == "":
-    return response.json({"status": "error", "massage": "Checkmark should not be uncheck! "}, status=400)
+    return response.json({"status": "error", "massage": "All field must be answered! "}, status=400)
   print("request values: ", values)
   prediction = predict_col11(values['age'], values['gender'], values['Specialization'], values['workHours'], values['patientPerDay'], values['overtimeWorkInterest'], values['overtimeWorkPaid'], values['sector'])
   print('prediction2 says:', prediction)

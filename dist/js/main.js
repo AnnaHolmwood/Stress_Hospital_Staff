@@ -72,14 +72,14 @@ $(".predict-btn").on("click", async function () {
 
   if (prediction.massage.col11_predict === 1)
     $(".predictionInfo").html(`
-      <p style="color: #6351CE" class="special_tag">The worker is sometimes stressed 😒</p>
+      <p style="color: #6351CE" class="special_tag">Employee at risk for some stress 😒</p>
     `)
   else if (prediction.massage.col11_predict === 2)
     $(".predictionInfo").html(`
-      <p style="color: #FF595E" class="special_tag">The worker is very often stressed 🤦‍♂️🤦‍♀️</p> 
+      <p style="color: #FF595E" class="special_tag">Employee at high risk for stress 🤦‍♂️🤦‍♀️</p> 
     `)
   else if (prediction.massage.col11_predict === 3)
     $(".predictionInfo").html(`
-        <p style="color: #00A35C" class="special_tag">The worker is never stressed 😁👍</p> 
+        <p style="color: #00A35C" class="special_tag">Employee at low risk for stress 😁👍</p> 
       `)
 })
