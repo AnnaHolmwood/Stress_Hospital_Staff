@@ -1,130 +1,70 @@
-/* Create first doughnut chart*/
-let doughnut = new Chart('doughnut', {
-    type: 'doughnut',
-    data: {
-      datasets: [
-       /* Outer doughnut data starts*/
+// Pass canvas id for Chart to work.
+let chart = new Chart('chart', {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green'],
+    datasets: [
       {
-        data: data1,
-        backgroundColor: [
-          "#FF5768", // red
-          "#00A5E3", // yellow
-          "#FFBF65", //blue
-          "#8DD7BF" //green
-        ],
-        label: 'Significant stress at work'
+        order: 0,
+        label: 'Bar Dataset',
+        borderWidth: 3,
+        data: [53, 39, 6],
+        // we can use HEX, rgba or simple css colors
+        backgroundColor: ["#FF5768", "#00A5E3", "#FFBF65", "#8DD7BF"]
       },
-      /* Outer doughnut data ends*/
-      /* Inner doughnut data starts*/
-      {
-        data: data2, 
-        backgroundColor: [
-            "#FF5768", // red
-            "#00A5E3", // yellow
-            "#FFBF65", //blue
-            "#8DD7BF" //green
-        ],
-        label: 'Little to no stress at work'
+    ]
+  },
+  options: {
+    onClick(e) {
+      // console.log(chart.getElementAtEvent(e)[0])
+      let point = chart.getElementAtEvent(e)[0]
+
+      if (point) {
+        let label = chart.data.labels[point._index]
+        let value = chart.data.datasets[point._datasetIndex].data[point._index]
+        console.log(label, value)
       }
-      /* Inner doughnut data ends*/
-      ],
-      labels: [
-        "Daily",
-        "Occassionally",
-        "Sometimes",
-        "Never"
-      ]
     },
-    options: {
-      responsive: true,
-      legend: {
-        position: 'top',
-      },
-      title: {
-        display: true,
-        text: 'Alcohol intake among hospital staff according to stress levels'
-      },
-      animation: {
-        animateScale: true,
-        animateRotate: true
-      },
-      tooltips: {
-        callbacks: {
-          label: function(item, data) {
-          console.log(data.labels, item);
-              return data.datasets[item.datasetIndex].label+ ": "+ data.labels[item.index]+ ": "+ data.datasets[item.datasetIndex].data[item.index];
-          }
-        }
+
+    onHover(e) {
+      let point = chart.getElementAtEvent(e)[0]
+      if (point) {
+        e.target.style.cursor = 'pointer'
+      } else {
+        e.target.style.cursor = 'default'
       }
     }
-  });
+  }
+})
 
-//   window.onload = function() {
-//     var ctx = document.getElementById("doughnut")
-//       .getContext("2d");
-//     window.doughnut = new Chart(ctx, config);
-//   };
+function addChartData(label, color, data) {
+  let chartDataset = chart.data.datasets[0]
 
-/* Create bar chart*/
-let bar = new Chart('bar', {
-    type: 'bar',
-    data: {
-        datasets: [
-        {
-            data: data3,
-            backgroundColor:  "#FFBF65", //blue
-            labels: [
-                "Hospital Counselor", 
-                "Anesthetics", 
-                "Casualty doctor", 
-                "Critical Care", 
-                "Fetal medicine", 
-                "General Practitioner", 
-                "Gynaecology", 
-                "Neurology", 
-                "Paediatrics", 
-                "Pathology", 
-                "Radiology", 
-                "Surgeon"]
-        },
-        ]
-    },
-    title: {
-        display: true,
-        text: 'Low motivation at work by specialization'
-    },
-});
-
-// functions for passing data to charts
-async function pass_data1_to_doughnut() {
-    let res = await fetch('/api/insights')
-    let alcohol_data1 = await res.json()
-    console.log(alcohol_data1) // returns an array with needed data
-    doughnut.data.datasets.data1 = alcohol_data1
-    doughnut.data.labels.push(label)
-    alcohol_data1.data.push(data)
-    alcohol_data1.backgroundColor.push(color)
-    doughnut.update()
+  chart.data.labels.push(label)
+  chartDataset.data.push(data)
+  chartDataset.backgroundColor.push(color)
+  // This step is important since each time something is added to canvas it needs to be updated as well
+  chart.update()
 }
 
-async function pass_data2_to_doughnut() {
-    let res = await fetch('/api/insights')
-    let alcohol_data2 = await res.json()
-    console.log(alcohol_data2) // returns an array with needed data
-    doughnut.data.datasets.data2 = alcohol_data2
-    doughnut.data.labels.push(label)
-    alcohol_data2.data.push(data)
-    alcohol_data2.backgroundColor.push(color)
-    doughnut.update()
+
+addChartData('Purple', 'purple', 15)
+addChartData('Orange', 'orange', 35)
+
+
+function addLineDataset(){
+  chart.data.datasets.push({
+    label: 'Line Dataset',
+    data: [90, 32, 5, 15, 45, 62],
+    type: 'line',
+    backgroundColor: ['rgba(0, 0, 0, 0)'],
+    borderColor: ['#03a5fc'],
+    order: 1,
+    pointRadius: 10,
+    pointBorderColor: 'black'
+  })
+
+  chart.update()
 }
 
-async function pass_data_to_bar() {
-    let res = await fetch('/api/insights')
-    let specialization_data = await res.json()
-    console.log(specialization_data) // returns an array with needed data
-    bar.data.datasets.data = specialization_data
-    bar.data.labels.push(label)
-    specialization_data.data.push(data)
-    specialization_data.backgroundColor.push(color)
-    bar.update()
-}
+addLineDataset()
