@@ -6,7 +6,6 @@ app = Sanic(__name__)
 
 
 train_col11()
-#train_col12()
 
 @app.post('/api/predict')
 async def predict_stress(req):
