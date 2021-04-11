@@ -26,11 +26,11 @@ def train_col11():
   classifier11.fit(X_train, y_train)
 
 
-# def predict_col11(age, gender, Specialization, workHours, patientPerDay, overtimeWorkInterest, overtimeWorkPaid, sector):
-#   y_pred = classifier11.predict(sc.transform([[age, gender, sector, Specialization, workHours, patientPerDay, overtimeWorkInterest, overtimeWorkPaid]]))
-#   #print('from inside ML_model col11: ', y_pred)
-#   y_pred = int(y_pred)
-#   return { "col11_predict": y_pred }
+def predict_col11(age, gender, Specialization, workHours, patientPerDay, overtimeWorkInterest, overtimeWorkPaid, sector):
+  y_pred = classifier11.predict(sc.transform([[age, gender, sector, Specialization, workHours, patientPerDay, overtimeWorkInterest, overtimeWorkPaid]]))
+  #print('from inside ML_model col11: ', y_pred)
+  y_pred = int(y_pred)
+  return { "col11_predict": y_pred }
 
 
 

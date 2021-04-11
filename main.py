@@ -1,12 +1,11 @@
 from sanic import Sanic, response
 from sanic.exceptions import NotFound
-from ML_model import predict_col11, predict_col12, train_col11, train_col12
+from ML_model import predict_col11, train_col11
 
 app = Sanic(__name__)
 
 
 train_col11()
-#train_col12()
 
 @app.post('/api/predict')
 async def predict_stress(req):
